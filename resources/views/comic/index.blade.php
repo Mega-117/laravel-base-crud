@@ -6,11 +6,12 @@
 @section('main_content')
     <h1>pagina comic</h1>
     <div class="container">
-        {{-- @foreach ($comics as $comic)
+        <a href="{{ route('comics.create') }}">vai a pagina create per aggiungere </a>
+        @foreach ($comics as $comic)
             <ul>
-                <li>{{ $comic['title'] }}</li>
+                <li><a href=" {{route('comics.show', $comic['id'])}} ">{{ $comic['title'] }}</a></li>
             </ul>
-        @endforeach --}}
+        @endforeach
     </div>
     
 @endsection
