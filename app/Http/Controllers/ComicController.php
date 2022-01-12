@@ -36,18 +36,28 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* $request->validate([
+            "title" => "required|min:5",
+            "series" => "required|min:5",
+          ]); */
+          $data = $request->all();
+
+          $newComic = new Comic();
+          $newComic->fill($data);
+          $newComic->save();r
+          return redirect()->route("comics.show", $newComic->id);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
+     * @param \App\Comic
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        return view("comic.show", compact("comic"));
     }
 
     /**
