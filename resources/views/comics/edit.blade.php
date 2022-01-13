@@ -2,9 +2,9 @@
 @section('page_title' ,'home')
 
 @section('main_content')
-<form action=" {{ route('comics.update', ['id' => $user -> id ]) }}" method="post">
+<form action=" {{ route('comics.update',  $comic->id ) }}" method="post">
     @csrf
-    @method('put')
+    @method('PUT')
 
     <div class="mb-3">
       <label for="title" class="form-label" >titolo</label>

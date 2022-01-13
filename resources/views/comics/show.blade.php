@@ -11,7 +11,12 @@
                 <li>{{ $comic['title'] }}</li>
                 <li>{{ $comic['series'] }}</li>
             </ul>
-            <a href="{{ route('comics.index') }} ">torna alla pagina comic</a>
+            <div>
+                <a href="{{ route('comics.index') }} ">torna alla pagina comic</a>
+            </div>
+            <div>
+                <a href=" {{ route('comics.edit', $comic->id)}} ">modifica</a>
+            </div>
         
     </div>
     
